@@ -34,7 +34,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
    wheelDiffVelocity = odroid.getWheelDiffVelocity();
-   move_os(wheelDiffVelocity[0], wheelDiffVelocity[1]);
+   move_os(wheelDiffVelocity[0], -wheelDiffVelocity[1]);
    read_joint_state(odroid.CurrentVelocity);
    odroid.onReceivingListener();
    odroid.pushString();
