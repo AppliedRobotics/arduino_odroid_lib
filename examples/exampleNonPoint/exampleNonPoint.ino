@@ -62,7 +62,7 @@ void read_joint_state(float* current_velocity){
     uint32_t get_data = 0;
     dxl_wb.readRegister(dxl_id[i], (uint16_t)128, (uint16_t)4, &get_data, &log);
     if(i == 1){
-      current_velocity[i] = -(int32_t)get_data*0.229/9.24;
+      current_velocity[i] = (int32_t)get_data*0.229/9.24;
     }
     else{
     current_velocity[i] = (int32_t)get_data*0.229/9.24;
